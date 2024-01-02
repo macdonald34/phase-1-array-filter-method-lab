@@ -1,9 +1,18 @@
-function findMatching(drivers, name){
-    return drivers.filter(drivers=>drivers.toLowerCase()===name.toLowerCase());
+const record = [
+    { year: "2015", result: "W"},
+    { year: "2014", result: "N/A"},
+    { year: "2013", result: "L"},
+    
+];
+function superbowlWin(record){
+    let result =record.find(winner =>winner.result === "W")
+
+    if(result){
+        return result.year;
+    }
+    else{
+        return undefined
+    }
+
 }
-function fuzzyMatch(drivers,Initials){
-    return drivers.filter(drivers=>drivers.startsWith(Initials));
-}
-function matchName(drivers,name){
-    return drivers.filter(drivers=>drivers.name===name);
-}
+console.log(superbowlWin(record));

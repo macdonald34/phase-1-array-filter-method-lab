@@ -1,18 +1,19 @@
-const record = [
-    { year: "2015", result: "W"},
-    { year: "2014", result: "N/A"},
-    { year: "2013", result: "L"},
-    
-];
-function superbowlWin(record){
-    let result =record.find(winner =>winner.result === "W")
+// Code your solution here
+function findMatching(drivers , name) {
+    const lowercaseName = name.toLowerCase();
+    const matchingDrivers = drivers.filter(driver => {
+      const lowercaseDriverName = driver.toLowerCase();
+      return lowercaseDriverName.includes(lowercaseName);
+    });
+  
+    return matchingDrivers;
+  }
 
-    if(result){
-        return result.year;
-    }
-    else{
-        return undefined
-    }
 
-}
-console.log(superbowlWin(record));
+  function fuzzyMatch (drivers , searchText) {
+      return drivers.filter (driver => driver.startsWith(searchText));
+  }
+  
+  function matchName (drivers, name) {
+    return drivers.filter (drivers => drivers.name === name);
+  }
